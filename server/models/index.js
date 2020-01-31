@@ -1,11 +1,11 @@
-const Cart = require('./Cart')
-const Product = require('./Product')
-const Review = require('./Review')
-const User = require('./User')
+const Carts = require('./Carts')
+const Products = require('./Products')
+const Reviews = require('./Reviews')
+const Users = require('./Users')
 
 module.exports = {
-  Cart,
-  Product,
-  Review,
-  User
+  Carts,
+  Products,
+  Reviews,
+  Users
 }
