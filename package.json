@@ -1,8 +1,19 @@
 {
   "name": "sahara",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server/index.js",
   "repository": "https://github.com/Stevejrmc/sahara.git",
   "author": "Steve McLaughlin <stevejrmc@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.10",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2"
+  }
 }
