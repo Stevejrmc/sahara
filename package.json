@@ -1,0 +1,8 @@
+{
+  "name": "sahara",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Stevejrmc/sahara.git",
+  "author": "Steve McLaughlin <stevejrmc@gmail.com>",
+  "license": "MIT"
+}
