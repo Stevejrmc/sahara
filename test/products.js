@@ -3,6 +3,7 @@ const chaiHttp = require('chai-http')
 const URI = 'http://localhost:3000'
 const expect = chai.expect
 const random = max => Math.floor(Math.random() * Math.floor(max))
+const descriptions = ['furniture', 'appliance', 'electronic', 'nursery']
 const id = random(25)
 
 chai.use(chaiHttp)
@@ -25,15 +26,18 @@ describe('Products', () => {
     // POST
     describe('POST products/', () => {
       it('Should return a status 201', done => {
-        const username = 'user' + random(10000)
-        const email = username + '@me.com'
+        const name = 'Item' + random(10000)
+        const description = descriptions[random(5)]
+        const rating = random(6)
+        const images = []
 
         chai.request(URI)
           .post('/products/')
           .send({
-            username,
-            email,
-            password: 'password'
+            name,
+            description,
+            rating,
+            images
           })
           .end((err, res) => {
             expect(err).to.be.null
@@ -49,7 +53,7 @@ describe('Products', () => {
         chai.request(URI)
           .put(`/products/${id}`)
           .send({
-            password: 'updatedPassword'
+            name: 'updatedName'
           })
           .end((err, res) => {
             expect(err).to.be.null
