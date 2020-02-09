@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
-const Users = require('./users')
+const Users = require('./resources/users')
 const PORT = process.env.PORT || 3000
 
 app.use(morgan('dev'))
