@@ -72,3 +72,69 @@ describe('Users', () => {
       })
     })
 })
+
+describe('Products', () => {
+    //GET
+    describe('GET products/:id', () => {
+      it('Should return a status 200', done => {
+
+        chai.request(URI)
+          .get(`/products/${id}`)
+          .end((err, res) => {
+            expect(err).to.be.null
+            expect(res).to.have.status(200)
+            done()
+          })
+      })
+    })
+
+    // POST
+    describe('POST products/', () => {
+      it('Should return a status 201', done => {
+        const username = 'user' + random(10000)
+        const email = username + '@me.com'
+
+        chai.request(URI)
+          .post('/products/')
+          .send({
+            username,
+            email,
+            password: 'password'
+          })
+          .end((err, res) => {
+            expect(err).to.be.null
+            expect(res).to.have.status(201)
+            done()
+          })
+      })
+    })
+
+    // PUT
+    describe('PUT products/:id', () => {
+      it('Should return a status 200', done => {
+        chai.request(URI)
+          .put(`/products/${id}`)
+          .send({
+            password: 'updatedPassword'
+          })
+          .end((err, res) => {
+            expect(err).to.be.null
+            expect(res).to.have.status(200)
+            done()
+          })
+      })
+    })
+
+    // DELETE
+    describe('DELETE products/:id', () => {
+      it('Should return a status 200', done => {
+        chai.request(URI)
+          .delete(`/products/${id}`)
+          .end((err, res) => {
+            expect(err).to.be.null
+            expect(res).to.have.status(200)
+            done()
+          })
+      })
+    })
+})
