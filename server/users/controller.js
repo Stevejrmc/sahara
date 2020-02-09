@@ -1,4 +1,5 @@
-const Users = require('../models').Users
+const db = require('../db')
+const Users = require('./model')
 
 module.exports = {
   get: (req, res) => {
