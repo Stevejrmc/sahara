@@ -1,2 +1,2 @@
 # Sahara
-Server 
+Server - Node, Express, MongoDB & Mocha/Chai 
